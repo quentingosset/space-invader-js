@@ -1,61 +1,77 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
+
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 
-<head>
-    <meta charset="UTF-8" />
-    <title>Bataille Spatiale</title>
-    <meta name="author" content="YourName" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <!-- GOOGLE JQUERY CDN-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-    <script src="./jquery-3.3.1.min.js"></script>
-</head>
-
-<body onkeydown="">
-    <div id="canvas">
-        <canvas id="stars"></canvas>
-        <div id="game">
-        </div>
-        <div id="startScreen">
-            <p>
-                SPACE INVADERS
-                <br>
-                <span class="start">START !</span>
-            </p>
-        </div>
-        <div id="finalScreen">
-            <p>
-                SPACE INVADERS
-                <br>
-                <span class="details">Scoreboard :</span>
-                <br>
-                <span class="scoreboard"></span>
-                <div id="form">
-                    <input type="text" name="pseudo" id="pseudo" placeholder="Insert your pseudo here" />
-                    <input type="submit" id="newScore" value="SEND" />
-                </div>
-                <p class="restart">RESTART !</p>
-            </p>
-        </div>
-        <div id="volume">
-            <img src="./images/sound_on.svg">
-        </div>
-        <div id="scoring">
-        </div>
-        <div id="time">
-            Time :
-            <span id="chronotime"> 00:00</span>
-        </div>
-        <div id="bestScoreDiv">
-            Best Score :
-            <span id="bestScore">0</span>
-        </div>
-    </div>
-</body>
-<script src="./Soucoupe.js"></script>
-<script src="./Vaisseau.js"></script>
-<script src="./Tir.js"></script>
-<script src="./Timer.js"></script>
-<script src="./main.js"></script>
-
+    <head>
+        <meta charset="UTF-8"/> 
+        <title>Bataille Spatiale</title>
+        <meta name="author" content="YourName"/>
+        <link rel="stylesheet" type="text/css" href="style.css" />   
+        <!-- GOOGLE JQUERY CDN-->
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+        <script src="./jquery-3.3.1.min.js"></script>
+    </head>
+    <body onkeydown="">
+        <div id="canvas">
+            <canvas id="stars"></canvas>
+            <div id="game">
+            </div>
+            <div id="startScreen">
+                <p>
+                    SPACE INVADERS<br>
+                    <span class="start">START !</span>
+                </p>
+            </div>
+            <div id="finalScreen">
+                <p>
+                    SPACE INVADERS<br><span class="details">Scoreboard :</span><br><span class="scoreboard"></span>
+                    <div id="form">
+                        <input type="text" name="pseudo" id="pseudo" placeholder="Insert your pseudo here"/>
+                        <input type="submit" id="newScore" value="SEND" />
+                    </div>
+                    <p class="restart">RESTART !</p>
+                </p>
+            </div>
+            <div id="volume">
+                <img src="./images/sound_on.svg">
+            </div>
+            <div id="scoring">
+                    <div style="
+                    /* display: inline-block; */
+                    /* width: 98px; */
+                    /* height: 98px; */
+                "><img src="images/HUD/HealthBar.png" style="
+                    position: absolute;
+                    z-index: 1;
+                "><img src="images/HUD/lifeBarColor.png" <="" div="" style="
+                    position: absolute;
+                    /* top: 7px; */
+                    width: 90px;
+                    height: 32px;
+                    left: 3px;
+                    /* right: -98px; */
+                ">
+                            </div>
+                    <!--<img src="./images/heart.png">-->
+            </div>
+            <div id="time">
+                Time : <span id="chronotime"> 00:00</span>
+            </div>
+            <div id="bestScoreDiv">
+                Best Score : <span id="bestScore">0</span> <div>
+            </div>
+          </div>
+        
+        <!--<div id="control">
+            score  : <span id="score"> 0 </span>
+            <span id="chronotime">00:00</span><br>
+            Meilleur score : <span id="bestScore">0</span>
+        </div>-->
+        
+    </body>
+    <script src="./Soucoupe.js"></script>
+    <script src="./Vaisseau.js"></script>
+    <script src="./Tir.js"></script>
+    <script src="./Timer.js"></script>
+    <script src="./main.js"></script>
 </html>

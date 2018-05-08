@@ -1,86 +1,79 @@
 // Classe de tir du vaisseau
-class Tir {
+class Tir{
     // Constructeur
-    constructor(posX, posY,_type) {
+    constructor(posX,posY){
         this.posX = posX;
         this.posY = posY;
-        this._type = _type;
-        this.img = "./images/tir.png";
+        this.img = "./images/shoot/7.png";
         this.id = new Date().getTime();
         tirArray.push(this);
     }
 
-    get posY() {
+    get posY(){
         return this._posY;
     }
 
-    set posY(value) {
+    set posY(value){
         this._posY = value;
     }
 
-    get posX() {
+    get posX(){
         return this._posX;
     }
 
-    set posX(value) {
+    set posX(value){
         this._posX = value;
     }
 
-    get img() {
+    get img(){
         return this._img;
     }
 
-    set img(value) {
+    set img(value){
         this._img = value;
     }
 
-    get id() {
+    get id(){
         return this._id;
     }
-    
-    get type() {
-        return this._type;
-    }
 
-    set id(value) {
+    set id(value){
         this._id = value;
     }
 
     // Initialise le tir dans le html
-    initHtml() {
+    initHtml(){
         var tir = $('#game');
-        $('#game').prepend("<img id='tir' data-type='"+this.type+"' data-id='" + this.id + "' src='" + this.img + "'/>");
+        //var tir = document.getElementById('tir');
+        $('#game').prepend( "<img id='tir' data-id='"+this.id+"' src='"+this.img+"'/>" );
         this.display();
-
+        
     }
 
-    removeTir() {
-        let tir = $("#tir[data-id='" + this.id + "']");
-        let index = tirArray.findIndex((el) => el.id === this.id)
-        tirArray.splice(index, 1)
+    removeTir(){
+        let tir = $("#tir[data-id='"+this.id+"']");
+        let index = tirArray.findIndex( (el) => el.id === this.id )
+        tirArray.splice(index,1)
         tir.remove();
     }
-    display() {
-        let tir = $("#tir[data-id='" + this.id + "']");
-        let index = tirArray.findIndex((el) => el.id === this.id)
-        if (this.posX > $('canvas').width() - 31) {
-            tirArray.splice(index, 1)
+    display(){
+        let tir = $("#tir[data-id='"+this.id+"']");
+        let index = tirArray.findIndex( (el) => el.id === this.id )
+        if(this.posX > $('canvas').width()-31){
+            //console.log("delete"+index);
+            tirArray.splice(index,1)
             tir.remove();
-            fire--;
         }
         tir.css({
-            'position': 'absolute',
-            'top': this.posY + "px",
-            'left': this.posX + "px",
-        });
+            'position' : 'absolute',
+            'top' : this.posY+"px",
+            'left' : this.posX+"px",
+         });
+         //tir.attr("alt",this.posY)
     }
 
-    move() {
-        if(this.type == 1){
-           this.posX += 5;
-        }else{
-            this.posX -= 5;
-        }
-        this.display();
+    move(){
+        this.posX += 5;
+        this.display();   
     }
 }
